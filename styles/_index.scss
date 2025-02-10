@@ -1,0 +1,138 @@
+@import 'variables';
+.products-container {
+    padding: 15px 10px;
+    margin: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+  
+    .card {
+      flex-grow: 1;
+      width: 100%;
+      height: auto;
+    }
+  }
+  
+  .search-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .input-group {
+    max-width: 400px; 
+    width: 100%;
+  }
+  
+  .search-input {
+    border: 2px solid $primary-color;
+    border-radius: $border-radius;
+    height: 40px;
+    padding: 8px 12px;
+    
+    &:focus {
+      border-color: $button-hover;
+      box-shadow: 0 0 8px rgba($button-hover, 0.6);
+      outline: none;
+    }
+  }
+  
+  .search-btn {
+    background-color: $button-bg;
+    border: 2px solid $primary-color;
+    height: 40px; 
+    border-radius: 0 $border-radius $border-radius 0;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  
+    &:hover {
+      background-color: $button-hover;
+    }
+  }
+  
+  
+  #containerProducts {
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+
+
+  }
+  
+  .footer {
+    background-color: $primary-color; 
+    color: $text-color;
+    padding: 15px 0;
+    margin-top: 20px;
+    text-align: center;
+    
+    .footer-link {
+      color: $text-color;
+      text-decoration: none;
+      margin: 0 10px;
+      transition: color 0.3s ease;
+  
+      &:hover {
+        color: $secondary-color; 
+      }
+    }
+  }
+  
+
+
+
+  
+
+
+
+.card {
+    background-color: $card-color;
+    border: 1px solid $primary-color;
+    border-radius: $border-radius;
+    box-shadow: $box-shadow;
+    max-width: 230px;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+  
+    &:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+  
+    .card-img-top {
+      height: 200px;
+      object-fit: cover;
+      display: block;
+      margin: auto;
+    }
+  
+    .card-body {
+      text-align: center;
+      line-height: 1.2;
+  
+      .card-title {
+        font-size: 1rem;
+        color: $text-color;
+      }
+  
+      .price {
+        font-size: 16px;
+        font-weight: bold;
+        color: $text-color;
+      }
+  
+      .cart-icon {
+        font-size: 1.2rem;
+        color: $button-hover;
+  
+        &:hover {
+          color: darken($button-hover, 10%);
+        }
+      }
+    }
+  }
+  
+  
+  

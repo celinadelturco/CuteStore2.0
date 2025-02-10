@@ -1,0 +1,18 @@
+@import 'variables';
+
+body {
+    padding-top: 80px; 
+    background-color: $secondary-color;
+    font-family: 'Arial', sans-serif;
+  }
+
+  .btn {
+    background-color: $button-bg;
+    border: none;
+    transition: background 0.3s ease;
+  
+    &:hover {
+      background-color: $button-hover;
+    }
+  }
+  

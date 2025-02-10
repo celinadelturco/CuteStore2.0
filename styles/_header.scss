@@ -1,0 +1,49 @@
+@import 'variables';
+.navbar {
+    background-color: $primary-color;
+    position: fixed;  
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    width: 100%; 
+    padding: 10px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+  
+
+    .navbar-brand {
+      font-weight: bold;
+      color: $text-color;
+      
+    
+  
+      &:hover {
+        color: $button-hover;
+      }
+    }
+  
+    .nav-link {
+      color: $text-color;
+  
+      &:hover {
+        color: $button-hover;
+      }
+    }
+  
+    .dropdown-menu {
+      background-color: $primary-color;
+  
+      .dropdown-item {
+        color: white;
+  
+        &:hover {
+          background-color: $button-hover;
+        }
+      }
+    }
+  }
+
+.navbar-brand  img {
+    width: 90px;
+    height: auto;
+}

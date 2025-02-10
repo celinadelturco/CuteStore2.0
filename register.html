@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Formulario de registro para CuteStore. Regístrate para acceder a productos exclusivos.">
+  <meta name="keywords" content="registro, ecommerce, CuteStore, usuario">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro - CuteStore</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <main class="container mt-5">
+    <h2>Registrarse en CuteStore</h2>
+    <form id="registerForm" class="row g-3">
+      <div class="col-md-6">
+        <label for="inputEmail4" class="form-label">Email</label>
+        <input type="email" class="form-control" id="inputEmail4" required
+          data-bs-toggle="tooltip" title="Ingrese un correo electrónico válido">
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">Contraseña</label>
+        <input type="password" class="form-control" id="inputPassword4" required
+          data-bs-toggle="tooltip" title="Ingrese una contraseña segura">
+      </div>
+      <div class="col-12">
+        <label for="inputAddress" class="form-label">Dirección</label>
+        <input type="text" class="form-control" id="inputAddress" placeholder="ejemplo 1234" required
+          data-bs-toggle="tooltip" title="Ingrese su dirección">
+      </div>
+      <div class="col-md-6">
+        <label for="inputCity" class="form-label">Ciudad</label>
+        <input type="text" class="form-control" id="inputCity" required
+          data-bs-toggle="tooltip" title="Ingrese su ciudad">
+      </div>
+      <div class="col-md-4">
+        <label for="inputState" class="form-label">Provincia</label>
+        <select id="inputState" class="form-select" required data-bs-toggle="tooltip" title="Seleccione su provincia">
+          <option value="" selected disabled>Seleccionar</option>
+          <option value="Santa Fe">Santa Fe</option>
+          <option value="Entre Ríos">Entre Ríos</option>
+          <option value="Córdoba">Córdoba</option>
+        </select>
+      </div>
+      <div class="col-12">
+        <button type="submit" class="btn btn-primary">Registrarme</button>
+      </div>
+    </form>
+  </main>
+
+  <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="registerModalLabel">Registro Exitoso</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body">
+          ¡Te has registrado exitosamente! Ahora puedes iniciar sesión.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          <button type="button" class="btn btn-primary" onclick="window.location.href='index.html';">Ir a inicio</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="bg-light text-center p-3 mt-5">
+    <p>&copy; 2025 CuteStore. Todos los derechos reservados.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.querySelectorAll('[data-bs-toggle="tooltip"]').forEach(function(tooltipEl) {
+      new bootstrap.Tooltip(tooltipEl);
+    });
+
+    document.getElementById("registerForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const email = document.getElementById("inputEmail4").value;
+      const password = document.getElementById("inputPassword4").value;
+      const address = document.getElementById("inputAddress").value;
+      const city = document.getElementById("inputCity").value;
+      const state = document.getElementById("inputState").value;
+
+      const users = JSON.parse(localStorage.getItem("users")) || [];
+
+      if (users.find(user => user.email === email)) {
+        alert("Este email ya está registrado. Intente con otro.");
+        return;
+      }
+
+      users.push({ email, password, address, city, state });
+      localStorage.setItem("users", JSON.stringify(users));
+
+      const registerModal = new bootstrap.Modal(document.getElementById('registerModal'));
+      registerModal.show();
+    });
+  </script>
+</body>
+</html>

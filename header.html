@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <header>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a  class="navbar-brand"href="#"  id="logo"><img src="images/Logo.png" alt="logo"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Categorías
+                        </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Bazar</a></li>
+                        <li><a class="dropdown-item" href="#">Librería</a></li>
+                        <li><a class="dropdown-item" href="#">Peluches</a></li>
+                    </ul>
+                    </li>
+                    </ul>
+                    <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#"><box-icon type='solid' name='cart'></box-icon></a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="userIcon" class="nav-link active" aria-current="page" href="login.html"><box-icon type='solid' name='user'></box-icon></a>
+                    </li>
+                    <li>
+                        <a id="logoutButton" class="nav-link active" aria-current="page" href="login.html" style="display: none;" ><box-icon type='solid' name='log-out'></box-icon></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+<script src="js/app.js"></script>
+</body>
+</html>
